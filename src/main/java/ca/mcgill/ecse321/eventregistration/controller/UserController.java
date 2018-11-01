@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,15 +20,11 @@ import ca.mcgill.ecse321.eventregistration.model.user.Driver;
 import ca.mcgill.ecse321.eventregistration.model.user.Passenger;
 import ca.mcgill.ecse321.eventregistration.repository.UserRepository;
 
-@RestController
+@Controller
 public class UserController{
 	
 	@Autowired UserRepository userRepository;
 	
-	@RequestMapping("/")
-	public String greeting() {
-		return "Hello world!";
-	}
 	
 	@PostMapping("/register/{role}")
 	public String createUser(@PathVariable("role") String role, 
@@ -154,6 +150,7 @@ public class UserController{
 			}
 			
 		}
+		return JSON.toJSONString(retMap);
 	}
 
 
