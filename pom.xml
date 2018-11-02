@@ -6,8 +6,8 @@
 	<groupId>com.example</groupId>
 	<artifactId>EventRegistration-backend-t06</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
-
+	<packaging>war</packaging>
+	
 	<name>Eventregistration</name>
 	<description>Demo project for Spring Boot</description>
 
