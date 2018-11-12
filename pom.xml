@@ -58,6 +58,11 @@
 		    <version>1.2.47</version>
 		</dependency>
 		
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-entitymanager</artifactId>
+		</dependency>
+		
 		
 	</dependencies>
 
@@ -70,7 +75,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 			    <artifactId>maven-dependency-plugin</artifactId>
-			    <version>2.4</version>
 			    <executions>
 			    	<execution>
 			        	<id>copy-dependencies</id>
@@ -89,31 +93,6 @@
 			      	</execution>
 			    </executions>
 			  </plugin>
-			  <plugin>
-                    <artifactId>maven-clean-plugin</artifactId>
-                    <version>2.5</version>
-                    <executions>
-                        <execution>
-                            <id>clean-jar-artifacts</id>
-                            <phase>install</phase>
-                            <goals>
-                                <goal>clean</goal>
-                            </goals>
-                            <configuration>
-                                <excludeDefaultDirectories>true</excludeDefaultDirectories>
-                                <filesets>
-                                    <fileset>
-                                        <directory>target</directory>
-                                        <excludes>
-                                            <exclude>*.war</exclude>
-                                            <exclude>dependency/*.jar</exclude>
-                                        </excludes>
-                                    </fileset>
-                                </filesets>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
 		</plugins>
 		
 	</build>
