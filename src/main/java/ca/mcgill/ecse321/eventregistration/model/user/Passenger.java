@@ -9,9 +9,6 @@ import javax.persistence.Id;
 @Entity
 public class Passenger {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
 	private String name;
 	private String phone;
@@ -21,6 +18,9 @@ public class Passenger {
 	private double score;
 	private int total_no;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Column(name = "id", updatable = false, nullable = false)
 	public Long getId() {
 		return id;
 	}

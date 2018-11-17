@@ -9,9 +9,6 @@ import javax.persistence.Id;
 @Entity
 public class Admin {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
 	private String name;
 	private String phone;
@@ -19,6 +16,9 @@ public class Admin {
 	private String age;
 	private String sex;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Column(name = "id", updatable = false, nullable = false)
 	public Long getId() {
 		return id;
 	}
